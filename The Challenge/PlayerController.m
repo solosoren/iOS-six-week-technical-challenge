@@ -21,6 +21,8 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [PlayerController new];
+        sharedInstance.players = [NSMutableArray new];
+
     });
     
     return sharedInstance;
@@ -28,7 +30,7 @@
 
 #pragma mark - Create
 
-- (Player *) createPlayer {
+- (Player *)createPlayer {
     
     Player *player = [NSEntityDescription insertNewObjectForEntityForName:@"Player" inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
     
@@ -37,18 +39,18 @@
 
 #pragma mark - Retrieve
 
-- (NSArray *)Players {
+- (NSArray *)players {
     
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Player"];
     
     NSError *error;
     
-    NSArray *EveryPlayer = [[Stack sharedInstance].managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    NSArray *everyPlayer = [[Stack sharedInstance].managedObjectContext executeFetchRequest:fetchRequest error:&error];
     
     if (error) {
         NSLog(@"Error %@", error.localizedDescription);
     }
-    return EveryPlayer;
+    return everyPlayer;
 }
 
 #pragma mark - Update

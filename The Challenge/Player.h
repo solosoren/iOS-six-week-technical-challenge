@@ -12,7 +12,5 @@
 
 @property (nonatomic, retain) NSString *player1Name;
 
-@property (nonatomic, retain) NSString *player2Name;
-
 
 @end

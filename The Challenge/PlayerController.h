@@ -16,8 +16,10 @@
 
 + (PlayerController *)sharedInstance;
 
-- (Player *) createPlayer;
+- (Player *)createPlayer;
 
 - (void)removePlayer:(Player *)player;
+
+- (void)save;
 
 @end

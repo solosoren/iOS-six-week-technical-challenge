@@ -11,6 +11,6 @@
 @implementation Player
 
 @dynamic player1Name;
-@dynamic player2Name;
+
 
 @end

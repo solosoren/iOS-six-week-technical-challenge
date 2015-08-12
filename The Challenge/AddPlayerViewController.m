@@ -7,10 +7,10 @@
 //
 
 #import "AddPlayerViewController.h"
+#import "PlayerController.h"
 
 @interface AddPlayerViewController ()
-@property (strong, nonatomic) IBOutlet UITextField *player1;
-@property (strong, nonatomic) IBOutlet UITextField *Player2;
+@property (strong, nonatomic) IBOutlet UITextField *player1TextField;
 
 @end
 
@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self updateWithPlayer:self.player];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,10 +27,31 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    
+    return YES;
+}
+
+- (IBAction)addPlayerButtonTapped:(id)sender {
+    
+    if (self.player) {
+        self.player.player1Name = self.player1TextField.text;
+    } else {
+        self.player = [[PlayerController sharedInstance] createPlayer];
+        self.player.player1Name = self.player1TextField.text;
+
+    }
+    [[PlayerController sharedInstance] save];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    
+}
+
 -(void)updateWithPlayer:(Player *)newPlayer {
+    
     if (newPlayer) {
-        self.player1.text = newPlayer.player1Name;
-        self.Player2.text = newPlayer.player2Name;
+        self.player1TextField.text = newPlayer.player1Name;
     }
 }
 

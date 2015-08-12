@@ -17,40 +17,18 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="LQZ-z3-ga4">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="557"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="VPd-cG-MrF">
-                                    <rect key="frame" x="0.0" y="64" width="600" height="51"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LzG-DQ-pS6">
-                                            <rect key="frame" x="272" y="15" width="56" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <constraints>
-                                        <constraint firstItem="LzG-DQ-pS6" firstAttribute="centerY" secondItem="VPd-cG-MrF" secondAttribute="centerY" id="7wC-sZ-nmw"/>
-                                        <constraint firstItem="LzG-DQ-pS6" firstAttribute="centerX" secondItem="VPd-cG-MrF" secondAttribute="centerX" id="Tj2-iy-dHQ"/>
-                                    </constraints>
-                                </view>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationLevel="1" indentationWidth="10" reuseIdentifier="playerCellID" textLabel="8JH-oe-3Ie" style="IBUITableViewCellStyleDefault" id="pSJ-8W-kPc">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationLevel="1" indentationWidth="10" reuseIdentifier="playerCellID" id="pSJ-8W-kPc">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pSJ-8W-kPc" id="Fmp-MZ-EWB">
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Player 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8JH-oe-3Ie">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Dsx-9G-fCo" kind="show" identifier="editPlayer" id="B3H-2F-Gxa"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -60,7 +38,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="LQZ-z3-ga4" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="HwA-xS-Cfd"/>
+                            <constraint firstItem="LQZ-z3-ga4" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" constant="21" id="HwA-xS-Cfd"/>
                             <constraint firstAttribute="trailing" secondItem="LQZ-z3-ga4" secondAttribute="trailing" id="j5g-IL-4rv"/>
                             <constraint firstItem="LQZ-z3-ga4" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="pBQ-W4-wbB"/>
                             <constraint firstItem="LQZ-z3-ga4" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="rgp-TO-VSe"/>
@@ -70,7 +48,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Randomize" id="VTJ-la-XTD"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="FTx-OY-XqT">
                             <connections>
-                                <segue destination="Dsx-9G-fCo" kind="show" id="ZRh-4W-4qg"/>
+                                <segue destination="Dsx-9G-fCo" kind="show" id="ElA-eR-PO7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -94,40 +72,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player 1" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Ll-Yl-f2A">
-                                <rect key="frame" x="187" y="112" width="230" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="230" id="rcg-6r-506"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nhs-LI-vvx">
-                                <rect key="frame" x="259" y="285" width="83" height="30"/>
-                                <state key="normal" title="Add Players">
+                                <rect key="frame" x="263" y="285" width="75" height="30"/>
+                                <state key="normal" title="Add Player">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addPlayerButtonTapped:" destination="Dsx-9G-fCo" eventType="touchUpInside" id="NPc-OW-zkV"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player 2" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BAE-rF-Pzi">
-                                <rect key="frame" x="187" y="181" width="230" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Ll-Yl-f2A">
+                                <rect key="frame" x="175" y="148" width="250" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="rcg-6r-506"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="BAE-rF-Pzi" firstAttribute="top" secondItem="7Ll-Yl-f2A" secondAttribute="bottom" constant="39" id="7vh-TI-m8H"/>
-                            <constraint firstItem="7Ll-Yl-f2A" firstAttribute="top" secondItem="8br-uP-51M" secondAttribute="bottom" constant="48" id="AbG-NU-k3m"/>
-                            <constraint firstAttribute="centerX" secondItem="7Ll-Yl-f2A" secondAttribute="centerX" constant="-2" id="ONx-cj-gnK"/>
-                            <constraint firstItem="7Ll-Yl-f2A" firstAttribute="trailing" secondItem="BAE-rF-Pzi" secondAttribute="trailing" id="P8Q-A5-Y0W"/>
+                            <constraint firstItem="7Ll-Yl-f2A" firstAttribute="top" secondItem="8br-uP-51M" secondAttribute="bottom" constant="84" id="AbG-NU-k3m"/>
+                            <constraint firstAttribute="centerX" secondItem="7Ll-Yl-f2A" secondAttribute="centerX" constant="-0.5" id="ONx-cj-gnK"/>
                             <constraint firstItem="Nhs-LI-vvx" firstAttribute="centerX" secondItem="0rY-VZ-hSl" secondAttribute="centerX" id="UlI-YI-gvH"/>
                             <constraint firstItem="Nhs-LI-vvx" firstAttribute="centerY" secondItem="0rY-VZ-hSl" secondAttribute="centerY" id="gSW-RD-NAk"/>
-                            <constraint firstItem="7Ll-Yl-f2A" firstAttribute="leading" secondItem="BAE-rF-Pzi" secondAttribute="leading" id="mvM-qL-vGT"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="Player2" destination="BAE-rF-Pzi" id="Rsw-fd-HLd"/>
-                        <outlet property="player1" destination="7Ll-Yl-f2A" id="HtE-tM-4hD"/>
+                        <outlet property="player1TextField" destination="7Ll-Yl-f2A" id="K6C-v0-fHB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uIw-4j-Ohs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -153,4 +125,7 @@
             <point key="canvasLocation" x="328" y="368"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ElA-eR-PO7"/>
+    </inferredMetricsTieBreakers>
 </document>
