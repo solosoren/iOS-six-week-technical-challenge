@@ -9,6 +9,8 @@
 #import "AddPlayerViewController.h"
 
 @interface AddPlayerViewController ()
+@property (strong, nonatomic) IBOutlet UITextField *player1;
+@property (strong, nonatomic) IBOutlet UITextField *Player2;
 
 @end
 
@@ -22,6 +24,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)updateWithPlayer:(Player *)newPlayer {
+    if (newPlayer) {
+        self.player1.text = newPlayer.player1Name;
+        self.Player2.text = newPlayer.player2Name;
+    }
 }
 
 /*

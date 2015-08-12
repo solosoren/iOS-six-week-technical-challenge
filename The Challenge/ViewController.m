@@ -10,6 +10,8 @@
 
 @interface ViewController () <UITableViewDataSource>
 
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
 @end
 
 @implementation ViewController
@@ -22,18 +24,25 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
+    
 }
+
+#pragma mark - TableViewDataSourceMethods
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    Player *player = [PlayerController sharedInstance].players[indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"playerCellID"];
+    cell.textLabel.text = player.player1Name;
     
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 1;
+    return [PlayerController sharedInstance].players.count;
 }
+
 
 @end

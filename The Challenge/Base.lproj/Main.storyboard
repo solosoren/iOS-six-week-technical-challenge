@@ -74,15 +74,18 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="LQZ-z3-ga4" id="ddp-ia-siZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1117" y="368"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Player View Controller-->
         <scene sceneID="rf3-Cf-zg0">
             <objects>
-                <viewController id="Dsx-9G-fCo" sceneMemberID="viewController">
+                <viewController id="Dsx-9G-fCo" customClass="AddPlayerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8br-uP-51M"/>
                         <viewControllerLayoutGuide type="bottom" id="HVY-ZK-BPn"/>
@@ -122,6 +125,10 @@
                             <constraint firstItem="7Ll-Yl-f2A" firstAttribute="leading" secondItem="BAE-rF-Pzi" secondAttribute="leading" id="mvM-qL-vGT"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="Player2" destination="BAE-rF-Pzi" id="Rsw-fd-HLd"/>
+                        <outlet property="player1" destination="7Ll-Yl-f2A" id="HtE-tM-4hD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uIw-4j-Ohs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

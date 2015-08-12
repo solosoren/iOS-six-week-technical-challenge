@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC0E60761B7BA6AC0007557D /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0E60751B7BA6AC0007557D /* PlayerController.m */; };
+		AC0E60791B7BA7900007557D /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0E60781B7BA7900007557D /* Stack.m */; };
+		AC0E607B1B7BA9780007557D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC0E607A1B7BA9780007557D /* CoreData.framework */; };
+		AC0E607E1B7BAA000007557D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC0E607C1B7BAA000007557D /* Model.xcdatamodeld */; };
+		AC0E60811B7BAA3D0007557D /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0E60801B7BAA3D0007557D /* Player.m */; };
 		ACC352541B7B9AA000E3AC29 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC352531B7B9AA000E3AC29 /* main.m */; };
 		ACC352571B7B9AA000E3AC29 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC352561B7B9AA000E3AC29 /* AppDelegate.m */; };
 		ACC3525A1B7B9AA000E3AC29 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC352591B7B9AA000E3AC29 /* ViewController.m */; };
@@ -28,6 +33,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC0E60741B7BA6AC0007557D /* PlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerController.h; sourceTree = "<group>"; };
+		AC0E60751B7BA6AC0007557D /* PlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerController.m; sourceTree = "<group>"; };
+		AC0E60771B7BA7900007557D /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
+		AC0E60781B7BA7900007557D /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
+		AC0E607A1B7BA9780007557D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		AC0E607D1B7BAA000007557D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		AC0E607F1B7BAA3D0007557D /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		AC0E60801B7BAA3D0007557D /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		ACC3524E1B7B9AA000E3AC29 /* The Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC352521B7B9AA000E3AC29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACC352531B7B9AA000E3AC29 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -50,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC0E607B1B7BA9780007557D /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +80,7 @@
 		ACC352451B7B9AA000E3AC29 = {
 			isa = PBXGroup;
 			children = (
+				AC0E607A1B7BA9780007557D /* CoreData.framework */,
 				ACC352501B7B9AA000E3AC29 /* The Challenge */,
 				ACC3526A1B7B9AA100E3AC29 /* The ChallengeTests */,
 				ACC3524F1B7B9AA000E3AC29 /* Products */,
@@ -90,6 +105,13 @@
 				ACC352591B7B9AA000E3AC29 /* ViewController.m */,
 				ACC352771B7BA29A00E3AC29 /* AddPlayerViewController.h */,
 				ACC352781B7BA29A00E3AC29 /* AddPlayerViewController.m */,
+				AC0E60741B7BA6AC0007557D /* PlayerController.h */,
+				AC0E60751B7BA6AC0007557D /* PlayerController.m */,
+				AC0E60771B7BA7900007557D /* Stack.h */,
+				AC0E60781B7BA7900007557D /* Stack.m */,
+				AC0E607F1B7BAA3D0007557D /* Player.h */,
+				AC0E60801B7BAA3D0007557D /* Player.m */,
+				AC0E607C1B7BAA000007557D /* Model.xcdatamodeld */,
 				ACC3525B1B7B9AA000E3AC29 /* Main.storyboard */,
 				ACC3525E1B7B9AA000E3AC29 /* Images.xcassets */,
 				ACC352601B7B9AA000E3AC29 /* LaunchScreen.xib */,
@@ -224,9 +246,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC0E60811B7BAA3D0007557D /* Player.m in Sources */,
+				AC0E60791B7BA7900007557D /* Stack.m in Sources */,
 				ACC3525A1B7B9AA000E3AC29 /* ViewController.m in Sources */,
 				ACC352791B7BA29A00E3AC29 /* AddPlayerViewController.m in Sources */,
+				AC0E607E1B7BAA000007557D /* Model.xcdatamodeld in Sources */,
 				ACC352571B7B9AA000E3AC29 /* AppDelegate.m in Sources */,
+				AC0E60761B7BA6AC0007557D /* PlayerController.m in Sources */,
 				ACC352541B7B9AA000E3AC29 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,6 +448,7 @@
 				ACC352731B7B9AA100E3AC29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ACC352741B7B9AA100E3AC29 /* Build configuration list for PBXNativeTarget "The ChallengeTests" */ = {
 			isa = XCConfigurationList;
@@ -430,8 +457,22 @@
 				ACC352761B7B9AA100E3AC29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AC0E607C1B7BAA000007557D /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AC0E607D1B7BAA000007557D /* Model.xcdatamodel */,
+			);
+			currentVersion = AC0E607D1B7BAA000007557D /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = ACC352461B7B9AA000E3AC29 /* Project object */;
 }
