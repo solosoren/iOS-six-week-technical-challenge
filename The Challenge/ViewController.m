@@ -33,6 +33,13 @@
     
 }
 
+- (IBAction)randomizeButtonTapped:(id)sender {
+    self.tableView.indexPathsForVisibleRows = 
+    
+    
+}
+
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([segue.identifier isEqualToString:@"editPlayer"]) {
@@ -48,8 +55,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    Player *player = [PlayerController sharedInstance].players[indexPath.row];
+
+    NSInteger playerIndex = indexPath.section * 2 + indexPath.row;
+    
+    Player *player = [PlayerController sharedInstance].players[playerIndex];
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"playerCellID"];
+    
     cell.textLabel.text = player.player1Name;
     
     return cell;
@@ -57,21 +69,26 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [PlayerController sharedInstance].players.count;
+    return 2;
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
         [[PlayerController sharedInstance] removePlayer:[PlayerController sharedInstance].players[indexPath.row]];
+        
+        [[PlayerController sharedInstance]save];
+
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
     }
     
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return 5;
+    return ([PlayerController sharedInstance].players.count / 2);
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
@@ -79,8 +96,6 @@
     return [NSString stringWithFormat:@"Team %ld",(long)section + 1];
 }
 
-
-#pragma mark - TableViewDelegateMethods
 
 //-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 //    

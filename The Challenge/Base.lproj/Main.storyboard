@@ -45,7 +45,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Randomizer" id="bYf-mU-buT">
-                        <barButtonItem key="leftBarButtonItem" title="Randomize" id="VTJ-la-XTD"/>
+                        <barButtonItem key="leftBarButtonItem" title="Randomize" id="VTJ-la-XTD">
+                            <connections>
+                                <action selector="randomizeButtonTapped:" destination="vXZ-lx-hvc" id="ve4-X7-t2M"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="FTx-OY-XqT">
                             <connections>
                                 <segue destination="Dsx-9G-fCo" kind="show" id="ElA-eR-PO7"/>
