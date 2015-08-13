@@ -22,7 +22,7 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
--(void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     
     [self.tableView reloadData];
 }
@@ -30,7 +30,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-    
 }
 
 - (IBAction)randomizeButtonTapped:(id)sender {
@@ -52,9 +51,8 @@
     
     NSLog(@"%@", self.shuffledArray);
     
-    [PlayerController sharedInstance].players = self.shuffledArray;
-    
     [self.tableView reloadData];
+    
 }
 
 
@@ -66,7 +64,9 @@
         
         AddPlayerViewController *viewController = segue.destinationViewController;
         
-        Player *player = [PlayerController sharedInstance].players[indexPath.row];
+        NSInteger kPlayerIndex = indexPath.section * 2 + indexPath.row;
+
+        Player *player = [PlayerController sharedInstance].players[kPlayerIndex];
         
         viewController.player = player;
     }
@@ -92,7 +92,7 @@
     return 2;
 }
 
--(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
@@ -105,12 +105,6 @@
     }
     
 }
-
-//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    
-//    
-//    
-//}
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
@@ -132,6 +126,9 @@
     
     return [NSString stringWithFormat:@"Team %ld",(long)section + 1];
 }
+
+
+
 
 
 //-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
