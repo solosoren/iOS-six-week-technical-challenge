@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Player.h"
+#import "OriginalViewController.h"
 
 
 @interface AddPlayerViewController : UIViewController

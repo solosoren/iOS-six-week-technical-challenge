@@ -6,16 +6,14 @@
 //  Copyright (c) 2015 SCN. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "OriginalViewController.h"
 #import "AddPlayerViewController.h"
 
-@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
-
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@interface OriginalViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @end
 
-@implementation ViewController
+@implementation OriginalViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -47,10 +45,6 @@
         [self.shuffledArray exchangeObjectAtIndex:i withObjectAtIndex:newIndex];
     }
     
-    NSLog(@"%@", [PlayerController sharedInstance].players);
-    
-    NSLog(@"%@", self.shuffledArray);
-    
     [self.tableView reloadData];
     
 }
@@ -66,7 +60,7 @@
         
         NSInteger kPlayerIndex = indexPath.section * 2 + indexPath.row;
 
-        Player *player = [PlayerController sharedInstance].players[kPlayerIndex];
+        Player *player = self.shuffledArray[kPlayerIndex];
         
         viewController.player = player;
     }
@@ -78,7 +72,7 @@
 
     NSInteger playerIndex = indexPath.section * 2 + indexPath.row;
     
-    Player *player = [PlayerController sharedInstance].players[playerIndex];
+    Player *player = self.shuffledArray[playerIndex];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"playerCellID"];
     
@@ -102,6 +96,8 @@
 
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         
+        [self.tableView reloadData];
+        
     }
     
 }
@@ -109,7 +105,7 @@
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
     
-    NSInteger playerCount = [PlayerController sharedInstance].players.count / 2;
+    NSInteger playerCount = self.shuffledArray.count / 2;
     
     return playerCount;
 
@@ -126,25 +122,6 @@
     
     return [NSString stringWithFormat:@"Team %ld",(long)section + 1];
 }
-
-
-
-
-
-//-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    
-//    UIView *headerView = [
-//    UILabel *label = (UILabel *)[headerView viewWithTag:123];
-//    [label setText:@"title"];
-//    
-//    return headerView;
-//    
-//}
-//
-//-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-////        return 48.0;
-//    
-//}
 
 
 @end

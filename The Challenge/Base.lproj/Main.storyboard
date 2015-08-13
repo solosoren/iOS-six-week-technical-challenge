@@ -7,7 +7,7 @@
         <!--Randomizer-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController title="Randomizer" id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="Randomizer" id="vXZ-lx-hvc" customClass="OriginalViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -26,6 +26,8 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pSJ-8W-kPc" id="Fmp-MZ-EWB">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.94811744399999998" blue="0.30916870419999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="1" green="0.948117444028162" blue="0.3091687041890997" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="Dsx-9G-fCo" kind="show" identifier="editPlayer" id="B3H-2F-Gxa"/>
                                         </connections>
@@ -36,7 +38,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="LQZ-z3-ga4" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="HwA-xS-Cfd"/>
                             <constraint firstAttribute="trailing" secondItem="LQZ-z3-ga4" secondAttribute="trailing" id="j5g-IL-4rv"/>
@@ -46,11 +48,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Randomizer" id="bYf-mU-buT">
                         <barButtonItem key="leftBarButtonItem" title="Randomize" id="VTJ-la-XTD">
+                            <color key="tintColor" red="1" green="0.25319512222022023" blue="0.19380010983627238" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="randomizeButtonTapped:" destination="vXZ-lx-hvc" id="ve4-X7-t2M"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="FTx-OY-XqT">
+                            <color key="tintColor" red="1" green="0.25319512220000001" blue="0.19380010980000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="Dsx-9G-fCo" kind="show" id="ElA-eR-PO7"/>
                             </connections>
@@ -79,6 +83,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nhs-LI-vvx">
                                 <rect key="frame" x="263" y="285" width="75" height="30"/>
                                 <state key="normal" title="Add Player">
+                                    <color key="titleColor" red="1" green="0.25319512220000001" blue="0.19380010980000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -87,6 +92,7 @@
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Ll-Yl-f2A">
                                 <rect key="frame" x="175" y="148" width="250" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="rcg-6r-506"/>
                                 </constraints>
@@ -94,7 +100,8 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.94811744399999998" blue="0.30916870419999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="0.25319512220000001" blue="0.19380010980000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="7Ll-Yl-f2A" firstAttribute="top" secondItem="8br-uP-51M" secondAttribute="bottom" constant="84" id="AbG-NU-k3m"/>
                             <constraint firstAttribute="centerX" secondItem="7Ll-Yl-f2A" secondAttribute="centerX" constant="-0.5" id="ONx-cj-gnK"/>

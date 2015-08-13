@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "PlayerController.h"
 
-@interface ViewController : UIViewController
+@interface OriginalViewController : UIViewController
 
 @property (strong, nonatomic) NSMutableArray *shuffledArray;
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+@property (strong, nonatomic) Player *player;
 
 
 @end

@@ -43,8 +43,12 @@
         self.player.player1Name = self.player1TextField.text;
 
     }
+    
+    
     [[PlayerController sharedInstance] save];
+    
     [self.navigationController popToRootViewControllerAnimated:YES];
+
     
 }
 
