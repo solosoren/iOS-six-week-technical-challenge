@@ -10,8 +10,6 @@
 
 @interface PlayerController ()
 
-@property (strong, nonatomic) NSArray *players;
-
 @end
 
 @implementation PlayerController
@@ -21,7 +19,6 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [PlayerController new];
-        sharedInstance.players = [NSMutableArray new];
 
     });
     
@@ -50,6 +47,8 @@
     if (error) {
         NSLog(@"Error %@", error.localizedDescription);
     }
+    
+    
     return everyPlayer;
 }
 
@@ -67,5 +66,7 @@
     [player.managedObjectContext deleteObject:player];
     
 }
+
+
 
 @end

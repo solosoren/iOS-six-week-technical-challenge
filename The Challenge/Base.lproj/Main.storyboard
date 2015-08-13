@@ -16,9 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="LQZ-z3-ga4">
-                                <rect key="frame" x="0.0" y="64" width="600" height="557"/>
-                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="LQZ-z3-ga4">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationLevel="1" indentationWidth="10" reuseIdentifier="playerCellID" id="pSJ-8W-kPc">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -38,10 +38,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="LQZ-z3-ga4" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" constant="21" id="HwA-xS-Cfd"/>
+                            <constraint firstItem="LQZ-z3-ga4" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="HwA-xS-Cfd"/>
                             <constraint firstAttribute="trailing" secondItem="LQZ-z3-ga4" secondAttribute="trailing" id="j5g-IL-4rv"/>
                             <constraint firstItem="LQZ-z3-ga4" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="pBQ-W4-wbB"/>
-                            <constraint firstItem="LQZ-z3-ga4" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="rgp-TO-VSe"/>
+                            <constraint firstItem="LQZ-z3-ga4" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-64" id="rgp-TO-VSe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Randomizer" id="bYf-mU-buT">

@@ -34,9 +34,27 @@
 }
 
 - (IBAction)randomizeButtonTapped:(id)sender {
-    self.tableView.indexPathsForVisibleRows = 
     
+    self.shuffledArray = [PlayerController sharedInstance].players.mutableCopy;
     
+    NSUInteger count = [PlayerController sharedInstance].players.count;
+    
+    for (NSUInteger i = 0; i < count; ++i) {
+        
+        NSInteger remainingCount = count - i;
+        
+        NSInteger newIndex = i + arc4random_uniform((u_int32_t)remainingCount);
+        
+        [self.shuffledArray exchangeObjectAtIndex:i withObjectAtIndex:newIndex];
+    }
+    
+    NSLog(@"%@", [PlayerController sharedInstance].players);
+    
+    NSLog(@"%@", self.shuffledArray);
+    
+    [PlayerController sharedInstance].players = self.shuffledArray;
+    
+    [self.tableView reloadData];
 }
 
 
@@ -45,8 +63,11 @@
     if ([segue.identifier isEqualToString:@"editPlayer"]) {
         
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
         AddPlayerViewController *viewController = segue.destinationViewController;
+        
         Player *player = [PlayerController sharedInstance].players[indexPath.row];
+        
         viewController.player = player;
     }
 }
@@ -54,7 +75,6 @@
 #pragma mark - TableViewDataSourceMethods
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
 
     NSInteger playerIndex = indexPath.section * 2 + indexPath.row;
     
@@ -86,9 +106,26 @@
     
 }
 
+//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    
+//    
+//    
+//}
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return ([PlayerController sharedInstance].players.count / 2);
+    
+    NSInteger playerCount = [PlayerController sharedInstance].players.count / 2;
+    
+    return playerCount;
+
+//    if (playerCount % 2 == 1) {
+//        return (playerCount / 2) + 1;
+//    } else {
+//        return playerCount / 2;
+//    }
+    
+   
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{

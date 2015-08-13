@@ -12,7 +12,7 @@
 
 @interface PlayerController : NSObject
 
-@property (strong, nonatomic, readonly) NSArray *players;
+@property (strong, nonatomic) NSMutableArray *players;
 
 + (PlayerController *)sharedInstance;
 
