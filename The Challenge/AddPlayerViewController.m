@@ -9,7 +9,8 @@
 #import "AddPlayerViewController.h"
 #import "PlayerController.h"
 
-@interface AddPlayerViewController ()
+@interface AddPlayerViewController () <UITextFieldDelegate>
+
 @property (strong, nonatomic) IBOutlet UITextField *player1TextField;
 
 @end
@@ -18,38 +19,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
     [self updateWithPlayer:self.player];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
+#pragma mark - TextField DELEGATE
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
     [textField resignFirstResponder];
-    
     return YES;
 }
 
 - (IBAction)addPlayerButtonTapped:(id)sender {
     
+    // If editing current player
     if (self.player) {
         self.player.player1Name = self.player1TextField.text;
     } else {
+        // Create new player
         self.player = [[PlayerController sharedInstance] createPlayer];
         self.player.player1Name = self.player1TextField.text;
-
     }
     
-    
     [[PlayerController sharedInstance] save];
-    
     [self.navigationController popToRootViewControllerAnimated:YES];
-
-    
 }
 
 -(void)updateWithPlayer:(Player *)newPlayer {
@@ -58,15 +51,5 @@
         self.player1TextField.text = newPlayer.player1Name;
     }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

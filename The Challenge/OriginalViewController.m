@@ -21,13 +21,8 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    
-    [self.tableView reloadData];
-}
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.tableView reloadData];
 }
 
 - (IBAction)randomizeButtonTapped:(id)sender {
@@ -46,7 +41,6 @@
     }
     
     [self.tableView reloadData];
-    
 }
 
 
@@ -58,6 +52,7 @@
         
         AddPlayerViewController *viewController = segue.destinationViewController;
         
+        // Obtain player index including sections
         NSInteger kPlayerIndex = indexPath.section * 2 + indexPath.row;
 
         Player *player = self.shuffledArray[kPlayerIndex];
@@ -97,9 +92,7 @@
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         
         [self.tableView reloadData];
-        
     }
-    
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -118,7 +111,7 @@
    
 }
 
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     
     return [NSString stringWithFormat:@"Team %ld",(long)section + 1];
 }

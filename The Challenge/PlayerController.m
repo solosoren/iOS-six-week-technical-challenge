@@ -48,7 +48,6 @@
         NSLog(@"Error %@", error.localizedDescription);
     }
     
-    
     return everyPlayer;
 }
 
